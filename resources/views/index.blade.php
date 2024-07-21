@@ -7,8 +7,9 @@
     <h1>Bienvenidos a mi pagina web!</h1>
     <p>Porfavor introduzca sus credenciales</p>
 
-        <form action="ejemplo.php" method="post">
-            <label for="correo">Correo Electrónico:</label><br>
+        <form action="{{route('form.submit')}}"method=POST>
+        @csrf 
+        <label for="correo">Correo Electrónico:</label><br>
             <input type="email" id="correo" name="correo" required><br><br>
     
             <label for="nombre">Nombre:</label><br>
@@ -17,7 +18,10 @@
             <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
             <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br>
 
-            <input type="submit" value="Enviar"></body>
+            <input type="submit" value="Enviar">
+        </form>
+        </body>
 
-
+        
+        
             </html>

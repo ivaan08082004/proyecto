@@ -13,5 +13,5 @@ use App\Http\Controllers\FormController;
 |
 */
 
-Route::get('/', [FormController::class, 'index']);
-
+Route::get('/', [FormController::class, 'index'])->name('form.index');;
+Route::post( '/saveData',[FormController::class, 'saveData'])->name('form.submit');
