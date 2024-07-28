@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: proyecto
+    volumes:
+      - .:/var/www
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=dpg-cqebv908fa8c73e3nvm0-a.frankfurt-postgres.render.com  
+      - DB_PORT=5432
+      - DB_DATABASE=dbproyecto_07dc
+      - DB_USERNAME=dbproyecto_07dc_user
+      - DB_PASSWORD=bBufDaq9GPM6QDnpoMTOyO021eDwmMOJ
