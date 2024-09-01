@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'psql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -37,11 +37,11 @@ return [
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST'),
-            'port' => env('DB_PORT'),
-            'database' => env('DB_DATABASE'),
-            'username' => env('DB_USERNAME'),
-            'password' => env('DB_PASSWORD'),
+            'host' => env('DB_HOST', '=dpg-cra2nsqj1k6c73bpjvbg-a.frankfurt-postgres.render.com'),
+            'port' => env('DB_PORT', '5432'),
+            'database' => env('DB_DATABASE', 'dbproyecto_vm3v'),
+            'username' => env('DB_USERNAME', 'dbproyecto_vm3v_user'),
+            'password' => env('DB_PASSWORD', 'BJT5kJRCHwi8cn5oqCedBw4MDDhwvGmG'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
