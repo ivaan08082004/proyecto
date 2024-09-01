@@ -19,7 +19,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Install application dependencies
 RUN composer install
-
+RUN php artisan migrate 
 # Expose port 9000 and start php-fpm server
 EXPOSE 8000
 CMD php artisan serve --port=8000 --host=0.0.0.0
