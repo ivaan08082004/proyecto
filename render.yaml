@@ -1,0 +1,22 @@
+# Exported from Render
+services:
+- type: web
+  name: proyecto
+  runtime: docker
+  repo: https://github.com/ivaan08082004/proyecto
+  plan: free
+  numInstances: 2  # Número fijo de instancias para balanceo
+  scaling:
+    minInstances: 1
+    maxInstances: 3
+    targetMemoryPercent: 60
+    targetCPUPercent: 60
+  envVars:
+  - key: REDIS_PORT
+    sync: false
+  - key: REDIS_PASSWORD
+    sync: false
+  # Resto de variables aquí...
+  region: frankfurt
+  dockerContext: .
+  dockerfilePath: ./Dockerfile
