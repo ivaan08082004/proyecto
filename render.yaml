@@ -6,11 +6,7 @@ services:
   repo: https://github.com/ivaan08082004/proyecto
   plan: free
   numInstances: 2  # Número fijo de instancias para balanceo
-  scaling:
-    minInstances: 1
-    maxInstances: 3
-    targetMemoryPercent: 60
-    targetCPUPercent: 60
+
   envVars:
   - key: REDIS_PORT
     sync: false
@@ -20,3 +16,5 @@ services:
   region: frankfurt
   dockerContext: .
   dockerfilePath: ./Dockerfile
+
+
