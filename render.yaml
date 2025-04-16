@@ -1,0 +1,52 @@
+services:
+  # Servicio web (tu aplicación)
+  - type: web
+    name: proyecto
+    runtime: docker
+    repo: https://github.com/ivaan08082004/proyecto
+    plan: free
+    numInstances: 1
+    region: frankfurt
+    dockerContext: .
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: REDIS_PORT
+        sync: false
+      - key: REDIS_PASSWORD
+        sync: false
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        value: "dpg-cvvvhsidbo4c738i69dg-a.frankfurt-postgres.render.com"  # Cambia esto cuando Render cree el servicio DB
+      - key: DB_PORT
+        value: "5432"
+      - key: DB_DATABASE
+        value: dbproyecto_vm3v_nxiy  # Nombre de la base de datos
+      - key: DB_USERNAME
+        value: dbproyecto_vm3v_user  # Nombre de usuario
+      - key: DB_PASSWORD
+        value: 7v0YZgetqxHwJM4LnulyCLO8BIEUs4Yp  # Contraseña del usuario
+
+  # Instancia de base de datos PostgreSQL
+  - type: database
+    name: proyecto-db
+    plan: free
+    engine: postgres
+    region: frankfurt
+    envVars:
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        value: "dpg-cvvvhsidbo4c738i69dg-a.frankfurt-postgres.render.com"  # Render proporcionará esta URL.
+      - key: DB_PORT
+        value: "5432"
+      - key: DB_DATABASE
+        value: dbproyecto_vm3v_nxiy  # Puedes elegir el nombre que quieras
+      - key: DB_USERNAME
+        value: dbproyecto_vm3v_user  # Nombre de usuario
+      - key: DB_PASSWORD
+        value: 7v0YZgetqxHwJM4LnulyCLO8BIEUs4Yp  # Contraseña
+
+
+
+
