@@ -25,4 +25,4 @@ RUN composer install --no-dev --optimize-autoloader
 
 # Expose port and run Laravel's dev server
 EXPOSE 8000
-CMD php artisan serve --port=8000 
+CMD php artisan serve --port=8000 --host=0.0.0.0
