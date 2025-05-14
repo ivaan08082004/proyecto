@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: proyecto-laravel
+    env: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        value: https://proyecto-h7qn.onrender.com
+      - key: APP_KEY
+        value: base64:HMZ6XNx4Qp7xjzniMtFTZ7hVxg+vcKL0zuWCxAH/jxo=
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        value: dpg-d0001g49c44c73fbkbo0-a.frankfurt-postgres.render.com
+      - key: DB_PORT
+        value: 5432
+      - key: DB_DATABASE
+        value: dbproyecto_w9mi
+      - key: DB_USERNAME
+        value: dbproyecto_vm3v_user
+      - key: DB_PASSWORD
+        value: 3mfmuraCy3THArO2rJwj5TIjCU6TQW15
+      - key: CACHE_DRIVER
+        value: file
+      - key: QUEUE_CONNECTION
+        value: sync
+      - key: SESSION_DRIVER
+        value: file
