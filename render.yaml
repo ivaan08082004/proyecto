@@ -17,18 +17,28 @@ services:
       - key: DB_CONNECTION
         value: pgsql
       - key: DB_HOST
-        value: dpg-d0001g49c44c73fbkbo0-a.frankfurt-postgres.render.com
+        fromService:
+          type: pserv
+          name: proyecto-db
       - key: DB_PORT
         value: 5432
       - key: DB_DATABASE
-        value: dbproyecto_w9mi
+        value: proyecto
       - key: DB_USERNAME
-        value: dbproyecto_vm3v_user
+        value: proyecto_user
       - key: DB_PASSWORD
-        value: 3mfmuraCy3THArO2rJwj5TIjCU6TQW15
+        value: proyecto_user
       - key: CACHE_DRIVER
         value: file
       - key: QUEUE_CONNECTION
         value: sync
       - key: SESSION_DRIVER
         value: file
+
+databases:
+  - name: proyecto-db
+    region: frankfurt
+    plan: free
+    databaseName: proyecto
+    user: proyecto_user
+    password: proyecto_user
