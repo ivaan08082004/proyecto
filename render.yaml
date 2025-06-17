@@ -17,15 +17,15 @@ services:
       - key: DB_CONNECTION
         value: pgsql
       - key: DB_HOST
-        value: dpg-d0001g49c44c73fbkbo0-a.frankfurt-postgres.render.com
+        value: dpg-d18rh43uibrs73dvkngg-a.frankfurt-postgres.render.com
       - key: DB_PORT
         value: 5432
       - key: DB_DATABASE
-        value: dbproyecto_w9mi
+        value: dbproyecto_2nfu
       - key: DB_USERNAME
-        value: dbproyecto_vm3v_user
+        value: db_user
       - key: DB_PASSWORD
-        value: 3mfmuraCy3THArO2rJwj5TIjCU6TQW15
+        value: uQAWyG97pJkFVRSSuM3BDSXgrMBQZ2F3
       - key: CACHE_DRIVER
         value: file
       - key: QUEUE_CONNECTION
